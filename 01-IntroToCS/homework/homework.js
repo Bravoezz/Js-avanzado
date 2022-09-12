@@ -21,6 +21,7 @@ function DecimalABinario(num) {
 2/2 = 1 (resto 0)
 1/2 = 0 (resto 1)*/
 //ddd
+// sdjksa
   let array = [];
   while (num>0) {
     array.unshift(num%2);

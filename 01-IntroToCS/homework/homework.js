@@ -3,7 +3,7 @@
 function BinarioADecimal(num) {
   // tu codigo aca
 
-  var resto = 0
+  var resto = 0;
 	let numA=num.toString().split("").reverse()
 	for(let i = 0; i<numA.length; i++){
   

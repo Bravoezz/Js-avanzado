@@ -33,20 +33,21 @@ LinkedList.prototype.add =function(valor){
   return newnode;
 }
 LinkedList.prototype.remove = function(){
-  let borrado
   var inicio = this.head;
   if(!inicio) {   
     return null
-  }else if(!inicio.next){
-    borrado = inicio.value;
+  }
+  if(!inicio.next){
+    let borrado = this.head.value;
+    this.head=null
+    return borrado;
   }
    while(inicio.next.next){
     inicio = inicio.next;
   }
-   borrado = inicio.next.value
-   this.size--;
+  let aux = inicio.next.value;   
   inicio.next = null
-  return borrado; 
+  return aux; 
 
 
 }

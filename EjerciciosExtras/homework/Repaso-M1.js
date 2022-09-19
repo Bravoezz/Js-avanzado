@@ -16,7 +16,16 @@ const {
 
 var countArray = function(array) {
     // Tu código aca:
-    
+    let cont = 0;
+    for (let i = 0; i < array.length; i++) {
+        if(Array.isArray(array[i])){
+            cont += countArray(array[i]);
+        }else{
+            cont += array[i];
+        }
+        
+    }
+    return cont;
 }
 
 
@@ -39,7 +48,14 @@ var countArray = function(array) {
 
 var countProps = function(obj) {
     // Tu código aca:
-
+    let cont = 0;
+    for (const prop in obj) {
+        cont++
+        if (typeof obj[prop]=== 'object' && !Array.isArray(obj[prop])){
+            cont += countProps(obj[prop])
+        }
+    }
+   return cont;
 }
 
 
@@ -53,7 +69,16 @@ var countProps = function(obj) {
 
 LinkedList.prototype.changeNotNumbers = function(){
     // Tu código aca:
-
+    let cont =0;
+    let current= this.head;
+    while(current){
+        if(isNaN(Number(current.value))){
+                current.value = 'Kiricocho'
+                cont++;
+        }
+        current = current.next;
+    }
+    return cont;
 }
 
 
@@ -67,7 +92,16 @@ LinkedList.prototype.changeNotNumbers = function(){
 
 var mergeQueues = function(queueOne, queueTwo) {
     // Tu código aca:
-
+    let newqueue = new Queue();
+    while(queueOne.size()||queueTwo.size()){
+        if(queueOne.size()){
+            newqueue.enqueue(queueOne.dequeue())
+        }
+        if(queueTwo.size()){  
+            newqueue.enqueue(queueTwo.dequeue())
+        }
+    }
+    return newqueue;
 }
 
 
@@ -89,6 +123,15 @@ var closureMult = function(multiplier) {
 // que debe retornar la suma total de los valores dentro de cada nodo del arbol
 BinarySearchTree.prototype.sum = function() {
     // Tu código aca:
+    let suma=0
+    suma += this.value;
+    if(this.left){
+       suma += this.left.sum();
+    }
+    if(this.right){
+        suma+= this.right.sum();
+    }
+    return suma;
 
 }
 

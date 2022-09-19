@@ -48,28 +48,19 @@ LinkedList.prototype.remove = function(){
   let aux = inicio.next.value;   
   inicio.next = null
   return aux; 
-
-
 }
-LinkedList.prototype.search = function(key){
-  
-  let current = this.head;
-  if (!current) {
-    return null;
-  }
-  while (current) {
-    if (current.value === key) {
-      return current.value;
-    } else if (typeof key === "function") {
-      if (key(current.value)) {
-        return current.value;
-      }
+LinkedList.prototype.search = function(key){ 
+  let inicio = this.head;
+
+  while (inicio) {
+    if (inicio.value == key) {
+      return inicio.value;
+    }else if(typeof key === 'function'){
+      if(key(inicio.value)) return inicio.value;
     }
-    current = current.next;
+    inicio = inicio.next
   }
   return null;
- 
-
 }
  var linkedList = new LinkedList();
 

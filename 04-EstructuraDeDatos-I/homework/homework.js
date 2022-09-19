@@ -45,6 +45,7 @@ Queue.prototype.dequeue = function(){
 Queue.prototype.size = function (){
  return this.array.length;
 }
+
 // No modifiquen nada debajo de esta linea
 // --------------------------------
 

@@ -53,16 +53,15 @@ BinarySearchTree.prototype.breadthFirstForEach = function(){
 
 }
 BinarySearchTree.prototype.size= function(){
-  
-  var contleft = 0;
-  contleft++
+  var cont = 0;
+  cont++
   if (this.left) {
-    contleft+=this.left.size()
+    cont+=this.left.size()
   }
   if (this.right) {
-    contleft+=this.right.size()
+    cont+=this.right.size()
   }
-return contleft;
+return cont;
 }
 
 
